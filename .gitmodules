@@ -1,0 +1,18 @@
+[submodule "panda"]
+	path = panda
+	url = ../../commaai/panda.git
+	ignore = untracked
+[submodule "opendbc"]
+	path = opendbc
+	url = ../../commaai/opendbc.git
+	ignore = untracked
+[submodule "laika_repo"]
+	path = laika_repo
+	url = ../../commaai/laika.git
+[submodule "cereal"]
+	path = cereal
+	url = ../../commaai/cereal.git
+	ignore = untracked
+[submodule "rednose_repo"]
+	path = rednose_repo
+	url = ../../commaai/rednose.git

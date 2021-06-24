@@ -140,6 +140,8 @@ class CarState(CarStateBase):
     self.prev_cruise_buttons = self.cruise_buttons
     self.cruise_buttons = cp.vl["CLU11"]["CF_Clu_CruiseSwState"]
 
+    self.ev_soc = cp.vl["CLU13", "CF_Clu_DTE"]
+
     return ret
 
   @staticmethod
@@ -205,6 +207,8 @@ class CarState(CarStateBase):
       ("SCCInfoDisplay", "SCC11", 0),
       ("ACC_ObjDist", "SCC11", 0),
       ("ACCMode", "SCC12", 1),
+
+      ("CF_Clu_DTE", "CLU13", 0)
     ]
 
     checks = [
@@ -213,6 +217,7 @@ class CarState(CarStateBase):
       ("TCS13", 50),
       ("TCS15", 10),
       ("CLU11", 50),
+      ("CLU13", 50),
       ("ESP12", 100),
       ("CGW1", 10),
       ("CGW4", 5),

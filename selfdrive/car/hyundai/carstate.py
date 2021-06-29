@@ -140,7 +140,7 @@ class CarState(CarStateBase):
     self.prev_cruise_buttons = self.cruise_buttons
     self.cruise_buttons = cp.vl["CLU11"]["CF_Clu_CruiseSwState"]
 
-    self.ev_soc = cp.vl["CLU13", "CF_Clu_DTE"]
+    self.ev_soc = cp.vl["CLU13"]["CF_Clu_DTE"]
 
     return ret
 
@@ -217,7 +217,6 @@ class CarState(CarStateBase):
       ("TCS13", 50),
       ("TCS15", 10),
       ("CLU11", 50),
-      ("CLU13", 50),
       ("ESP12", 100),
       ("CGW1", 10),
       ("CGW4", 5),

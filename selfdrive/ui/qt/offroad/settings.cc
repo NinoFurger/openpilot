@@ -182,6 +182,15 @@ DevicePanel::DevicePanel(QWidget* parent) : QWidget(parent) {
     }
   }, "", this));
 
+  //Run Ntune.py
+    offroad_btns.append(new ButtonControl("Run nTune AutoTune for lateral.", "RUN AutoTune",
+                                        "This runs Ntune.py too autotune Lateral.", [=]() {
+    if (ConfirmationDialog::confirm("Are you sure you want to run ntune?", this)) {
+      //run code here
+      system("cd /data/openpilot/selfdrive && python ntune.py");
+    }
+  }, "", this));
+
   //Open Android Settings adb shell am start -a android.settings.SETTINGS
     offroad_btns.append(new ButtonControl("Open Android Settings", "SETTINGS",
                                         "This opens android settings to change APN name settings", [=]() {
@@ -421,8 +430,7 @@ QWidget * community_panel() {
                                             "",
                                             "../assets/offroad/icon_road.png"
                                             ));
-  toggles_list->addWidget(horizontal_line());
-  toggles_list->addWidget(new ParamControl("hotspot_on_boot",
+  toggles_list->addWidget(horizontal_line());  toggles_list->addWidget(new ParamControl("hotspot_on_boot",
                                             "Hot Spot On Start",
                                             "",
                                             "../assets/offroad/icon_road.png"
